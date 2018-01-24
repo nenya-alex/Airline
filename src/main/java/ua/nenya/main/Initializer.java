@@ -13,21 +13,21 @@ import java.util.Map;
 
 public class Initializer {
 
-	private AircraftTypeDao aircraftTypeDao;
-	private AircraftDao aircraftDao;
+    private AircraftTypeDao aircraftTypeDao;
+    private AircraftDao aircraftDao;
 
-	public Airline initAirline() {
-		Airline airline = new Airline();
-		
-		aircraftTypeDao = new AircraftTypeDaoMemoryImpl();
-		Map<String, AircraftType> aircraftTypes = aircraftTypeDao.initAircraftType();
+    public Airline initAirline() {
+        Airline airline = new Airline();
 
-		aircraftDao = new AircraftDaoMemoryImpl();
-		List<Aircraft> aircrafts = aircraftDao.initAircrafts(aircraftTypes);
+        aircraftTypeDao = new AircraftTypeDaoMemoryImpl();
+        Map<String, AircraftType> aircraftTypes = aircraftTypeDao.initAircraftType();
 
-		airline.setAirCrafts(aircrafts);
-		
-		return airline;
-	}
+        aircraftDao = new AircraftDaoMemoryImpl();
+        List<Aircraft> aircrafts = aircraftDao.initAircrafts(aircraftTypes);
+
+        airline.setAirCrafts(aircrafts);
+
+        return airline;
+    }
 
 }

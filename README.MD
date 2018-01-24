@@ -1,0 +1,1 @@
+Run main() method in Airline\src\main\java\ua\nenya\main\App.java

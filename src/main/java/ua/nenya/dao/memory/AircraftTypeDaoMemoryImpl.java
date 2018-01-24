@@ -9,20 +9,20 @@ import java.util.Map;
 
 public class AircraftTypeDaoMemoryImpl implements AircraftTypeDao {
 
-	@Override
-	public Map<String, AircraftType> initAircraftType() {
+    @Override
+    public Map<String, AircraftType> initAircraftType() {
 
-		AircraftType airliner = new AircraftType("Airliner");
-		AircraftType cargoAircraft = new AircraftType("Cargo Aircraft");
-		AircraftType executiveJet = new AircraftType("Executive Jet");
+        AircraftType airliner = new AircraftType("Airliner");
+        AircraftType cargoAircraft = new AircraftType("Cargo Aircraft");
+        AircraftType executiveJet = new AircraftType("Executive Jet");
 
 
-		Map<String, AircraftType> aircraftTypes = new HashMap<>();
-		aircraftTypes.put(Const.AIRLINER, airliner);
-		aircraftTypes.put(Const.CARGO_AIRCRAFT, cargoAircraft);
-		aircraftTypes.put(Const.EXECUTIVE_JET, executiveJet);
+        Map<String, AircraftType> aircraftTypes = new HashMap<>();
+        aircraftTypes.put(Const.AIRLINER, airliner);
+        aircraftTypes.put(Const.CARGO_AIRCRAFT, cargoAircraft);
+        aircraftTypes.put(Const.EXECUTIVE_JET, executiveJet);
 
-		return aircraftTypes;
-	}
+        return aircraftTypes;
+    }
 
 }

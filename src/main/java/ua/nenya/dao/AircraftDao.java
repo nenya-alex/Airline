@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface AircraftDao {
-	
-	List<Aircraft> initAircrafts(Map<String, AircraftType> aircraftTypes);
+
+    List<Aircraft> initAircrafts(Map<String, AircraftType> aircraftTypes);
 
 }
