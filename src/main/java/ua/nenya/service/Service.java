@@ -1,4 +1,4 @@
-package ua.nenya.main;
+package ua.nenya.service;
 
 import ua.nenya.consoleIO.ConsoleIO;
 import ua.nenya.domain.Aircraft;
@@ -11,7 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-public class Methods {
+public class Service {
 
 	public boolean isCommandEqualsRegex(String command, String regex) {
 		Pattern p = Pattern.compile(regex);
@@ -39,11 +39,11 @@ public class Methods {
 		return airline.stream().map(aircraft -> aircraft.getCarryingCapacity()).reduce(0.00,(a, b) -> a + b);
 	}
 
-	public List<Aircraft> sortAircrafts(List<Aircraft> airCrafts) {
+	public List<Aircraft> sortAircraftsByFlightRange(List<Aircraft> airCrafts) {
 		return airCrafts.stream().sorted(Comparator.comparingDouble(Aircraft::getFlightRange)).collect(Collectors.toList());
 	}
 
-	public List<Aircraft> findAircraftByFlightRange(BufferedReader br, ConsoleIO io, List<Aircraft> airCrafts) {
+	public List<Aircraft> findAircraftByFuelConsumption(BufferedReader br, ConsoleIO io, List<Aircraft> airCrafts) {
 
 		List<Aircraft> result = null;
 

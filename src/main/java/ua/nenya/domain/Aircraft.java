@@ -61,6 +61,36 @@ public class Aircraft {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Aircraft aircraft = (Aircraft) o;
+
+        if (Double.compare(aircraft.capacity, capacity) != 0) return false;
+        if (Double.compare(aircraft.carryingCapacity, carryingCapacity) != 0) return false;
+        if (Double.compare(aircraft.flightRange, flightRange) != 0) return false;
+        if (Double.compare(aircraft.fuelConsumption, fuelConsumption) != 0) return false;
+        return aircraftType != null ? aircraftType.equals(aircraft.aircraftType) : aircraft.aircraftType == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        temp = Double.doubleToLongBits(capacity);
+        result = (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(carryingCapacity);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(flightRange);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(fuelConsumption);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (aircraftType != null ? aircraftType.hashCode() : 0);
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "Aircraft{" +
                 "capacity=" + capacity +
